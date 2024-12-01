@@ -6,10 +6,31 @@ public class MovieManager {
 
     public MovieManager() {
         movies = new ArrayList<>();
-        
-        movies.add(new Movie("Inception", "Sci-Fi", 2010));
-        movies.add(new Movie("Titanic", "Romance", 1997));
-        movies.add(new Movie("The Dark Knight", "Action", 2008));
+        movies.add(new Movie("Ex Machina", "Sci-Fi", 2010));
+        movies.add(new Movie("The Notebook", "Romance", 1997));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Ex Machina", "Sci-Fi", 2010));
+        movies.add(new Movie("The Notebook", "Romance", 1997));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Ex Machina", "Sci-Fi", 2010));
+        movies.add(new Movie("The Notebook", "Romance", 1997));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+        movies.add(new Movie("Five Feet Apart", "Action", 2008));
+
     }
 
     public List<Movie> getMovies() {
