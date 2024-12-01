@@ -99,7 +99,7 @@ public class MovieCatalog extends JFrame {
                 gbc.insets = new Insets(10, 10, 10, 10);
                 gbc.gridx = 0;
                 gbc.gridy = 0;
-                gbc.fill = GridBagConstraints.HORIZONTAL;
+                gbc.fill = GridBagConstraints.WEST;
 
                 JButton buyTixButton = new JButton("Buy Tickets");
                 buyTixButton.setFocusable(false);
@@ -107,12 +107,12 @@ public class MovieCatalog extends JFrame {
                 buyTixButton.addActionListener(new BuyTicketsButtonClickListener(movie));
                 buyTixPanel.add(buyTixButton, gbc);
 
-                gbc.gridx = 1;
-                JButton bookTixButton = new JButton("Book Tickets");
-                bookTixButton.setFocusable(false);
-                bookTixButton.setFont(tixButtonFont);
-                bookTixButton.addActionListener(new BookTicketsButtonClickListener(movie));
-                buyTixPanel.add(bookTixButton, gbc);
+                //gbc.gridx = 1;
+                //JButton bookTixButton = new JButton("Book Tickets");
+                //bookTixButton.setFocusable(false);
+                //bookTixButton.setFont(tixButtonFont);
+                //bookTixButton.addActionListener(new BookTicketsButtonClickListener(movie));
+                //buyTixPanel.add(bookTixButton, gbc);
 
                 descriptionPanel.add(movieLabel);
                 descriptionPanel.add(titleLabel);
@@ -133,23 +133,6 @@ public class MovieCatalog extends JFrame {
         private Movie movie;
 
         public BuyTicketsButtonClickListener(Movie movie) {
-            this.movie = movie;
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("asdasdasdasdsa");
-            BookingScreen bookingScreen = new BookingScreen(movie.getTitle());
-            setContentPane(bookingScreen.getContentPane());
-            revalidate();
-            repaint();
-        }
-    }
-
-    private class BookTicketsButtonClickListener implements ActionListener {
-        private Movie movie;
-
-        public BookTicketsButtonClickListener(Movie movie) {
             this.movie = movie;
         }
 
