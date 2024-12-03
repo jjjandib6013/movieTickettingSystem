@@ -10,7 +10,7 @@ public class LoginScreen extends JFrame {
 
     public LoginScreen() {
         setTitle("Movie Ticketing System");
-        setSize(1200, 1000);
+        setSize(1000, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setBackground(Color.getHSBColor(195 / 360f, 25 / 100f, 90 / 100f));
