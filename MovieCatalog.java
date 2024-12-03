@@ -32,7 +32,7 @@ public class MovieCatalog extends JFrame {
         add(headerPanel, BorderLayout.NORTH);
 
         displayMovieAreaPanel = new JPanel();
-        displayMovieAreaPanel.setLayout(new GridLayout(0, 2, 0, 20));
+        displayMovieAreaPanel.setLayout(new GridLayout(0, 3, 0, 20));
         displayMovieAreaPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 20, 0));
         JScrollPane scrollPane = new JScrollPane(displayMovieAreaPanel);
         scrollPane.getVerticalScrollBar().setUnitIncrement(20); 
@@ -62,7 +62,8 @@ public class MovieCatalog extends JFrame {
             for (int i = 0; i < movieManager.getMovies().size(); i++) {
                 Movie movie = movieManager.getMovies().get(i);
 
-                JPanel descriptionPanel = new JPanel(new GridLayout(5, 0, 0, 10));
+                JPanel descriptionPanel = new JPanel(new GridLayout(11, 0, 0, 10));
+                descriptionPanel.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
                 JPanel picturePanel = new JPanel();
                 JLabel pictureLabel = new JLabel();
 
@@ -70,6 +71,11 @@ public class MovieCatalog extends JFrame {
                 Font descriptionFont = new Font(Font.SERIF, Font.PLAIN, 20);
                 Font tixButtonFont = new Font(Font.SERIF, Font.BOLD, 20);
 
+                JPanel movieDescriptionPanel = new JPanel();
+
+                JLabel movieDescriptionLabel = new JLabel("Description: " + movie.getDescription());
+                movieDescriptionLabel.setFont(descriptionFont);
+                    
                 String expectedFileName = movie.getTitle() + ".jpg";
                 File imageFile = new File(imageFolder, expectedFileName);
 
@@ -92,6 +98,21 @@ public class MovieCatalog extends JFrame {
 
                 JLabel yearLabel = new JLabel("Year: " + movie.getYear());
                 yearLabel.setFont(descriptionFont);
+
+                JLabel durationLabel = new JLabel("Duration: " + movie.getDuration());
+                durationLabel.setFont(descriptionFont);
+
+                JLabel directorLabel = new JLabel("Director: " + movie.getDirector());
+                directorLabel.setFont(descriptionFont);
+
+                JLabel ratingLabel = new JLabel("Rating: " + movie.getRating() + " stars");
+                ratingLabel.setFont(descriptionFont);
+
+                JLabel priceLabel = new JLabel("Price: " + movie.getPrice());
+                priceLabel.setFont(descriptionFont);
+
+                JLabel languageLabel = new JLabel("Language: " + movie.getLanguage());
+                languageLabel.setFont(descriptionFont);
 
                 JPanel buyTixPanel = new JPanel(new GridBagLayout());
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -118,10 +139,18 @@ public class MovieCatalog extends JFrame {
                 descriptionPanel.add(titleLabel);
                 descriptionPanel.add(genreLabel);
                 descriptionPanel.add(yearLabel);
+                descriptionPanel.add(durationLabel);
+                descriptionPanel.add(directorLabel);
+                descriptionPanel.add(ratingLabel);
+                descriptionPanel.add(priceLabel);
+                descriptionPanel.add(languageLabel);
                 descriptionPanel.add(buyTixPanel);
+
+                movieDescriptionPanel.add(movieDescriptionLabel, BorderLayout.NORTH);
 
                 displayMovieAreaPanel.add(picturePanel);
                 displayMovieAreaPanel.add(descriptionPanel);
+                displayMovieAreaPanel.add(movieDescriptionPanel);
             }
         }
 
@@ -138,11 +167,8 @@ public class MovieCatalog extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("asdasdasdasdsa");
             BookingScreen bookingScreen = new BookingScreen(movie.getTitle());
-            setContentPane(bookingScreen.getContentPane());
-            revalidate();
-            repaint();
+            bookingScreen.setVisible(true);
         }
     }
 }

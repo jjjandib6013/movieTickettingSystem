@@ -1,12 +1,23 @@
 public class Movie {
     private String title;
     private String genre;
+    private String duration;
+    private String director;
+    private double rating;
+    private String description;
+    private int price;
+    private String language;
     private int year;
 
-    public Movie(String title, String genre, int year) {
+    public Movie(String title, String genre, int year, String duration, String director, double rating, int price, String language, String description) {
         this.title = title;
         this.genre = genre;
-        this.year = year;
+        this.duration = duration;
+        this.director = director;
+        this.rating = rating;
+        this.description = description;
+        this.price = price;
+        this.language = language;
     }
 
     public String getTitle() {
@@ -19,5 +30,29 @@ public class Movie {
 
     public int getYear() {
         return year;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+    
+    public double getRating() {
+        return rating;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getLanguage() {
+        return language;
     }
 }
