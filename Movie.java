@@ -4,18 +4,16 @@ public class Movie {
     private String duration;
     private String director;
     private double rating;
-    private String description;
     private int price;
     private String language;
     private int year;
 
-    public Movie(String title, String genre, int year, String duration, String director, double rating, int price, String language, String description) {
+    public Movie(String title, String genre, int year, String duration, String director, double rating, int price, String language) {
         this.title = title;
         this.genre = genre;
         this.duration = duration;
         this.director = director;
         this.rating = rating;
-        this.description = description;
         this.price = price;
         this.language = language;
     }
@@ -46,10 +44,6 @@ public class Movie {
 
     public int getPrice() {
         return price;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public String getLanguage() {

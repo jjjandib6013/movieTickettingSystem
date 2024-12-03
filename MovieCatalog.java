@@ -32,7 +32,7 @@ public class MovieCatalog extends JFrame {
         add(headerPanel, BorderLayout.NORTH);
 
         displayMovieAreaPanel = new JPanel();
-        displayMovieAreaPanel.setLayout(new GridLayout(0, 3, 0, 20));
+        displayMovieAreaPanel.setLayout(new GridLayout(0, 2, 0, 20));
         displayMovieAreaPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 20, 0));
         JScrollPane scrollPane = new JScrollPane(displayMovieAreaPanel);
         scrollPane.getVerticalScrollBar().setUnitIncrement(20); 
@@ -62,7 +62,7 @@ public class MovieCatalog extends JFrame {
             for (int i = 0; i < movieManager.getMovies().size(); i++) {
                 Movie movie = movieManager.getMovies().get(i);
 
-                JPanel descriptionPanel = new JPanel(new GridLayout(11, 0, 0, 10));
+                JPanel descriptionPanel = new JPanel(new GridLayout(11, 0, 0, 0));
                 descriptionPanel.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
                 JPanel picturePanel = new JPanel();
                 JLabel pictureLabel = new JLabel();
@@ -71,11 +71,6 @@ public class MovieCatalog extends JFrame {
                 Font descriptionFont = new Font(Font.SERIF, Font.PLAIN, 20);
                 Font tixButtonFont = new Font(Font.SERIF, Font.BOLD, 20);
 
-                JPanel movieDescriptionPanel = new JPanel();
-
-                JLabel movieDescriptionLabel = new JLabel("Description: " + movie.getDescription());
-                movieDescriptionLabel.setFont(descriptionFont);
-                    
                 String expectedFileName = movie.getTitle() + ".jpg";
                 File imageFile = new File(imageFolder, expectedFileName);
 
@@ -146,11 +141,9 @@ public class MovieCatalog extends JFrame {
                 descriptionPanel.add(languageLabel);
                 descriptionPanel.add(buyTixPanel);
 
-                movieDescriptionPanel.add(movieDescriptionLabel, BorderLayout.NORTH);
 
                 displayMovieAreaPanel.add(picturePanel);
                 displayMovieAreaPanel.add(descriptionPanel);
-                displayMovieAreaPanel.add(movieDescriptionPanel);
             }
         }
 
