@@ -85,7 +85,7 @@ public class LoginScreen extends JFrame {
             String username = userLogin.getText();
             String password = new String(passLogin.getPassword());
 
-            if (("admin".equals(username) && "admin".equals(password)) || ("jandib".equals(username) && "jandib".equals(password))) {
+            if (("admin".equals(username) && "admin".equals(password)) || ("jandib".equals(username) && "jandib".equals(password)) || ("rex".equals(username) && "123".equals(password)) || ("dave123".equals(username) && "rivera456".equals(password))) {
                 JOptionPane.showMessageDialog(LoginScreen.this, "Login successful!", "Login Successful", JOptionPane.INFORMATION_MESSAGE);
                 getContentPane().removeAll();
                 setContentPane(movieCatalog.getContentPane());
