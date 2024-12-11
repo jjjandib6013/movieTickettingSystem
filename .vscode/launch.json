@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LoginScreen",
+            "request": "launch",
+            "mainClass": "LoginScreen",
+            "projectName": "movieTickettingSystem_eac41fa1"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
