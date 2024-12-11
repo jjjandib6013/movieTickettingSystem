@@ -9,6 +9,13 @@
             "name": "LoginScreen",
             "request": "launch",
             "mainClass": "LoginScreen",
+            "projectName": "movieTickettingSystem_806911aa"
+        },
+        {
+            "type": "java",
+            "name": "LoginScreen",
+            "request": "launch",
+            "mainClass": "LoginScreen",
             "projectName": "movieTickettingSystem_eac41fa1"
         },
         {

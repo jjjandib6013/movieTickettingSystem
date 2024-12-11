@@ -8,7 +8,7 @@ public class SeatSelection extends JFrame {
     private final JButton[][] seatButtons;
     private int ticketsLeft;
 
-    public SeatSelection(String movieTitle, int totalTickets, String name, String email, String phone) {
+    public SeatSelection(String movieTitle, int totalTickets, String name, String email, String phone, int ticketPrice) {
         this.ticketsLeft = totalTickets;
 
         setTitle("Seat Selection - " + movieTitle);
@@ -41,22 +41,24 @@ public class SeatSelection extends JFrame {
                 seatButton.setFocusable(false);
 
                 seatButton.addActionListener(e -> {
-                    if (ticketsLeft > 0) {
-                        if (seatButton.getBackground() == Color.GREEN) {
-                            seatButton.setBackground(Color.RED);
-                            seatButton.setEnabled(false);
-                            ticketsLeft--;
-                            ticketCounterLabel.setText("Tickets Left: " + ticketsLeft);
+                    if (seatButton.getBackground() == Color.GREEN && ticketsLeft > 0) {
+                        // Select the seat
+                        seatButton.setBackground(Color.RED);
+                        ticketsLeft--;
+                    } else if (seatButton.getBackground() == Color.RED) {
+                        // Deselect the seat
+                        seatButton.setBackground(Color.GREEN);
+                        ticketsLeft++;
+                    }
+                    ticketCounterLabel.setText("Tickets Left: " + ticketsLeft);
 
-                            if (ticketsLeft == 0) {
-                                JOptionPane.showMessageDialog(
-                                        this,
-                                        "All tickets selected! Proceeding to confirmation.",
-                                        "Selection Complete",
-                                        JOptionPane.INFORMATION_MESSAGE
-                                );
-                            }
-                        }
+                    if (ticketsLeft == 0) {
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "All tickets selected! Proceeding to confirmation.",
+                                "Selection Complete",
+                                JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 });
 
@@ -84,11 +86,10 @@ public class SeatSelection extends JFrame {
                         JOptionPane.INFORMATION_MESSAGE
                 );
 
-                // Clear the current seat selection UI and show the payment confirmation
-                mainPanel.removeAll();  // Remove existing components
-                mainPanel.add(new PaymentConfirmation(movieTitle, totalTickets, name, email, phone).getContentPane());
-                mainPanel.revalidate(); // Revalidate to refresh the layout
-                mainPanel.repaint();    // Repaint to update the display
+                mainPanel.removeAll();
+                mainPanel.add(new PaymentConfirmation(movieTitle, totalTickets, name, email, phone, ticketPrice).getContentPane());
+                mainPanel.revalidate();
+                mainPanel.repaint();
             }
         });
 

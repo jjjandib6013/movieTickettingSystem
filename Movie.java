@@ -5,7 +5,7 @@ public class Movie {
     private double rating;
     private int price;
     private int year;
-    private String dateshowing; // New field for date showing
+    private String dateshowing;
     private String showtimes;
 
     public Movie(String title, String genre, int year, String duration, double rating, int price, String dateshowing, String showtimes) {
