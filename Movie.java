@@ -2,21 +2,21 @@ public class Movie {
     private String title;
     private String genre;
     private String duration;
-    private String director;
     private double rating;
     private int price;
-    private String language;
     private int year;
+    private String dateshowing; // New field for date showing
+    private String showtimes;
 
-    public Movie(String title, String genre, int year, String duration, String director, double rating, int price, String language) {
+    public Movie(String title, String genre, int year, String duration, double rating, int price, String dateshowing, String showtimes) {
         this.title = title;
         this.genre = genre;
         this.year = year;
         this.duration = duration;
-        this.director = director;
         this.rating = rating;
         this.price = price;
-        this.language = language;
+        this.dateshowing = dateshowing;
+        this.showtimes = showtimes;
     }
 
     public String getTitle() {
@@ -35,10 +35,6 @@ public class Movie {
         return duration;
     }
 
-    public String getDirector() {
-        return director;
-    }
-    
     public double getRating() {
         return rating;
     }
@@ -47,7 +43,11 @@ public class Movie {
         return price;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getDateshowing() {
+        return dateshowing;
+    }
+
+    public String getShowtimes() {
+        return showtimes;
     }
 }

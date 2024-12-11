@@ -62,7 +62,7 @@ public class MovieCatalog extends JFrame {
             for (int i = 0; i < movieManager.getMovies().size(); i++) {
                 Movie movie = movieManager.getMovies().get(i);
 
-                JPanel descriptionPanel = new JPanel(new GridLayout(11, 0, 0, 0));
+                JPanel descriptionPanel = new JPanel(new GridLayout(12, 0, 0, 0));
                 descriptionPanel.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
                 JPanel picturePanel = new JPanel();
                 JLabel pictureLabel = new JLabel();
@@ -97,17 +97,17 @@ public class MovieCatalog extends JFrame {
                 JLabel durationLabel = new JLabel("Duration: " + movie.getDuration());
                 durationLabel.setFont(descriptionFont);
 
-                JLabel directorLabel = new JLabel("Director: " + movie.getDirector());
-                directorLabel.setFont(descriptionFont);
-
                 JLabel ratingLabel = new JLabel("Rating: " + movie.getRating() + " stars");
                 ratingLabel.setFont(descriptionFont);
 
                 JLabel priceLabel = new JLabel("Price: " + movie.getPrice());
                 priceLabel.setFont(descriptionFont);
 
-                JLabel languageLabel = new JLabel("Language: " + movie.getLanguage());
-                languageLabel.setFont(descriptionFont);
+                JLabel dateShowingLabel = new JLabel("Date Showing: " + movie.getDateshowing());
+                dateShowingLabel.setFont(descriptionFont);
+
+                JLabel showtimesLabel = new JLabel("Showtimes: " + movie.getShowtimes());
+                showtimesLabel.setFont(descriptionFont);
 
                 JPanel buyTixPanel = new JPanel(new GridBagLayout());
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -135,10 +135,10 @@ public class MovieCatalog extends JFrame {
                 descriptionPanel.add(genreLabel);
                 descriptionPanel.add(yearLabel);
                 descriptionPanel.add(durationLabel);
-                descriptionPanel.add(directorLabel);
                 descriptionPanel.add(ratingLabel);
                 descriptionPanel.add(priceLabel);
-                descriptionPanel.add(languageLabel);
+                descriptionPanel.add(dateShowingLabel);
+                descriptionPanel.add(showtimesLabel);
                 descriptionPanel.add(buyTixPanel);
 
 
